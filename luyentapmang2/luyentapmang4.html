@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mang4</title>
+</head>
+<body>
+<table>
+    <h1>String Statistic</h1>
+    <tr>
+        <td>String</td>
+        <td><label><input type="text" id="txt"></label></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button onclick="statistic">statistic</button> </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><p id="kqa"></p></td>
+    </tr>
+</table>
+<script>
+    function statistic(){
+        let x = document.getElementById('txt').value; //lay gia tri tu input
+        let array = x.split('');//tach ky tu trong chuoi
+        let count = 0;
+        for(let i=0; i < array.length; i++){ // Đếm số phần tử trong chuỗi
+            if (array[i].trim() !== ' ') {
+                count++;
+            }
+        }
+        let kq = 'So ky tu: ' + array.length;
+        document.getElementById('kqa').innerHTML = kq;
+    }
+</script>
+</body>
+</html>

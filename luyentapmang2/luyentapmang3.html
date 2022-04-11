@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [ 'c', 's', 'c', 2, 6, 1];
+    let number = [];
+    function checkNumber(array){
+        let count = 0;
+        for(let i=0;i<array.length;i++){
+            if (isNaN(array[i])===false){
+                count ++;
+            }console.log(count)
+        }alert(count);
+    }
+    console.log()
+    checkNumber(array);
+</script>
+</body>
+</html>
