@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>check</title>
+</head>
+<body>
+<script>
+    let x = prompt('nhap chuoi doi xung')
+
+   function isPalindrome(str){
+        let array =  str.split('');//tách chuỗi
+       console.log(array)
+        let firstPalindrome = array[0];//gọi ký tự đầu
+        let lastPalindrome = array[array.length-1];//gọi kí tự cuối
+        if(firstPalindrome===lastPalindrome){
+            array.pop();//xoá ký tự đầu
+            array.shift();//xoá ký tự cuối
+        if (isEnd(array)){//gọi hàm isEnd, đúng thì trả true
+            return true;
+       }else{
+            let newstr =  array.join('')//gọi mảng mới newstr, dùng join để nối lại thành một chuỗi
+           isPalindrome(newstr);//gọi hàm
+       }
+   }
+   return false//báo false nếu kí tự không đối xứng
+   }
+    function isEnd(arr) {
+        return arr.length === 0 || arr.length === 1;//gọi length còn <=1
+    }
+
+
+    function main() {
+       alert(isPalindrome(x));
+    }main(x) //chạy function
+</script>
+</body>
+</html>
