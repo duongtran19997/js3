@@ -6,33 +6,40 @@
 </head>
 <body>
 <script>
-    class MyDate{
-        constructor(day,month,year) {
-            this.day=day;
-            this.month=month;
-            this.year=year;
+    class MyDate {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
         }
 
-    setDay(day){
-        this.day=day;
+        setDay(day) {
+            this.day = day;
+        }
+
+        setMonth(month) {
+            this.month = month;
+        }
+
+        setYear(year) {
+            this.year = year;
+        }
+
+        getDay() {
+            return this.day;
+        }
+
+        getMonth() {
+            return this.month;
+        }
+
+        getYear() {
+            return this.year;
+        }
     }
-    setMonth(month){
-        this.month=month;
-    }
-    setYear(year){
-        this.year=year;
-    }
-    getDay(){
-        return this.day;
-    }
-    getMonth(){
-        return this.month;
-    }
-    getYear(){
-        return this.year;
-    }
-    }
-    let date = new MyDate(19, 09, 1997);
+
+    let date = new MyDate(19, 9, 1997)
+
     // let day = date.getDay();
     //
     // let month = date.getMonth();
@@ -42,11 +49,11 @@
     date.setDay(10);
     date.setMonth(4);
     date.setYear(2022);
-    day=date.getDay();
-    month=date.getMonth();
-    year=date.getYear();
+    day = date.getDay();
+    month = date.getMonth();
+    year = date.getYear();
 
-    alert(day+'/'+month+'/'+year);
+    alert(day + '/' + month + '/' + year);
 </script>
 </body>
 </html>

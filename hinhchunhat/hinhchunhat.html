@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hinhchunhat</title>
+</head>
+<body>
+<div id="output"></div>
+<script>
+    class Rectangle{
+        constructor(length,width) {
+            this.length = +length;
+            this.width = +width;
+        }
+        getS(){
+            return this.length * this.width;
+        }
+        getP(){
+            return (this.length + this.width) * 2;
+        }
+    }
+    let rectangle= new Rectangle(4,7);
+    let S = rectangle.getS();
+    let P = rectangle.getP();
+    document.getElementById('output').innerHTML='dientichhcn ='+ S +'chuvihcn ='+ P
+</script>
+</body>
+</html>

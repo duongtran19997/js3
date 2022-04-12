@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phone</title>
+</head>
+<body>
+<script>
+    class Mobile{
+        constructor(name) {
+            this.name = name;
+            this.pin = 100;
+            this.inbox = [];
+            this.outbox = [];
+            this.message = '';
+            this.status = false;
+        }
+        checkStatus(){
+            if (this.status){
+                console.log('dienthoaidangbat')
+            }else{
+                console.log('dienthoaidangtat')
+            }
+        }
+
+        writeMessage(text){
+            if(this.status){
+            this.message = text;
+            this.pin-=1;}
+        }
+        turnOn(){
+            this.status=true
+        };
+        turnOff(){
+            if(this.status===true){
+                this.status=false
+            }
+        };
+        sendMessage(phone){
+            if(this.status){
+            this.outbox.push(this.message);
+            phone.inbox.push(this.message);
+            this.pin-=1;}
+        }
+    }
+    let Samsung = new Mobile('samsung');
+    let Iphone = new Mobile('iphone');
+    Iphone.turnOn()
+    Iphone.checkStatus()
+    Iphone.turnOff()
+    Iphone.checkStatus()
+    Iphone.writeMessage('batlenem')
+    console.log(Iphone.writeMessage())
+</script>
+</body>
+</html>
