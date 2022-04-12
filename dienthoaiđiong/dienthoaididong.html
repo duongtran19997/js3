@@ -30,10 +30,12 @@
         }
         turnOn(){
             this.status=true
+            this.pin-=1;
         };
         turnOff(){
             if(this.status===true){
                 this.status=false
+                this.pin-=1;
             }
         };
         sendMessage(phone){

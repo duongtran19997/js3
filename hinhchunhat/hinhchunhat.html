@@ -6,23 +6,39 @@
 </head>
 <body>
 <div id="output"></div>
+<canvas id="canvas" style="background-color: blue"></canvas>
 <script>
     class Rectangle{
         constructor(length,width) {
             this.length = +length;
             this.width = +width;
         }
+        getWidth(){
+            return  this.width;
+        }
+        getLength(){
+            return this.length;
+        }
         getS(){
-            return this.length * this.width;
+            let length = this.length;
+            let width = this.width
+            return length * width
         }
         getP(){
             return (this.length + this.width) * 2;
         }
+        drawCanvas(){
+            let draw = document.getElementById('canvas');
+            draw.setAttribute('width', this.width);
+            draw.setAttribute('height',this.length);
+        }
     }
-    let rectangle= new Rectangle(4,7);
+    let rectangle= new Rectangle(400,700);
     let S = rectangle.getS();
     let P = rectangle.getP();
+    let Draw = rectangle.drawCanvas();
     document.getElementById('output').innerHTML='dientichhcn ='+ S +'chuvihcn ='+ P
+    rectangle.drawCanvas();
 </script>
 </body>
 </html>
