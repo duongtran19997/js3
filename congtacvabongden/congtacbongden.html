@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>congtacbongden</title>
+</head>
+<body>
+<button onclick=""></button>
+<button onclick=""></button>
+<script>
+    class Switcher {
+        constructor() {
+
+        }
+
+        connecttoLamp(ElectricLamp) {
+            ElectricLamp.status = !ElectricLamp.status;
+        }
+        switchOnorOff(ElectricLamp) {
+            ElectricLamp.status = !ElectricLamp.status;
+            if (ElectricLamp.status) {
+                alert('den sang')
+            } else {
+                alert('den tat');
+            }
+        }
+    }
+
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
+        }
+    }
+
+
+    let swift = new Switcher()
+    let electricLamp = new ElectricLamp()
+    swift.switchOnorOff(electricLamp);
+    swift.switchOnorOff(electricLamp);
+
+</script>
+</body>
+</html>
