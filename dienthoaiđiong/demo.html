@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="flashLamp.turnOn()">turnOn</button>
+<button onclick="flashLamp.turnOff()">turnOff</button>
+<button onclick="flashLamp.chargeBaterry()">chargePin</button>
+<script>
+    class Battery {
+        constructor() {
+            this.energy = 100;
+        }
+        decreaseBattery(){
+            this.energy-=10;
+        }
+        getEnergy(energy){
+            this.energy=energy;
+        }
+    }
+
+    class FlashLamp {
+        constructor() {
+            this.status = false;
+            this.battery = Battery;
+        }
+
+        connectBattery(battery) {
+            this.battery = battery;
+        }
+
+        turnOn() {
+            if(this.battery.energy>=0) {
+                this.status = true;
+                alert('batden')
+                this.battery.decreaseBattery()
+            }else{
+                alert('hetpin')
+            }
+        }
+
+        turnOff() {
+            if (this.status) {
+                this.status = false
+                alert('bongdentat')
+            }
+        }
+        chargeBaterry(){
+            this.battery.getEnergy(100)
+            alert('pin100%')
+        }
+    }
+
+    let flashLamp = new FlashLamp()
+    let battery = new Battery();
+    flashLamp.connectBattery(battery)
+
+</script>
+</body>
+</html>

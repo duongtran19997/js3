@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>denpin</title>
+</head>
+<body>
+<button onclick="FlashLamp.turnOn()">On</button>
+<button onclick="FlashLamp.turnOff()">Off</button>
+<button onclick="FlashLamp.chargeBatery()">charge</button>
+<script>
+    class Batery {
+        constructor() {
+            this.energy = 100;
+        }
+
+        decreaseBatery() {
+            this.energy -= 10
+        }
+
+        getEnergy(energy) {
+            this.energy = energy
+        }
+    }
+
+    class flashLamp {
+        constructor(Batery) {
+            this.status = false;
+            this.batery = Batery;
+        }
+
+        connectBatery(batery) {
+            this.batery = batery;
+        }
+
+        turnOn() {
+            if (this.batery.energy >= 0) {
+                this.status = true
+                this.batery.decreaseBatery()
+                alert('denbat')
+            } else {
+                alert('hetpin')
+            }
+        }
+        turnOff(){
+            this.status=false
+            alert('dentat');
+        }
+        chargeBatery(){
+            this.batery.getEnergy(100)
+            alert('dasac')
+        }
+    }
+
+    let FlashLamp = new flashLamp()
+    let batery = new Batery()
+    FlashLamp.connectBatery(batery)
+</script>
+</body>
+</html>
