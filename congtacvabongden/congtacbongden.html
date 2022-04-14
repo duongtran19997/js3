@@ -5,16 +5,9 @@
     <title>congtacbongden</title>
 </head>
 <body>
-<button onclick=""></button>
-<button onclick=""></button>
 <script>
     class Switcher {
         constructor() {
-
-        }
-
-        connecttoLamp(ElectricLamp) {
-            ElectricLamp.status = !ElectricLamp.status;
         }
         switchOnorOff(ElectricLamp) {
             ElectricLamp.status = !ElectricLamp.status;
@@ -28,10 +21,8 @@
 
     class ElectricLamp {
         constructor() {
-            this.status = false;
         }
     }
-
 
     let swift = new Switcher()
     let electricLamp = new ElectricLamp()

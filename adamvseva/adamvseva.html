@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>adamvseva</title>
 </head>
 <body>
-$END$
+<script>
+    class Human {
+        constructor(name,sex) {
+            this.name=name;
+            this.sex=sex;
+            this.hmweight=100;
+        }
+        eatFruit(fruit){
+            fruit.decreaseWeight();
+            this.hmweight++;
+        }
+        checkInforhuman(human){
+            alert(human.name + human.sex);
+        }
+        getInfor(){
+            return alert(this.name + this.sex +this.hmweight);
+        }
+        checkweight(fruit){
+            fruit.checkWeight();
+        }
+
+    }
+
+    class Fruit{
+        constructor(name) {
+            this.name=name;
+            this.weight=10;
+        }
+        decreaseWeight(){
+            if(this.weight >=0) {
+                this.weight--;
+                alert(`qua tao con ${this.weight} can nang`);
+            }else{
+                alert('het tao roi');
+            }
+        }
+        checkWeight(){
+            return this.weight
+        }
+    }
+    let adam = new Human('Adam','Male');
+    let eva = new Human('Eva','Female');
+    let apple = new Fruit('Apple');
+    adam.checkInforhuman(eva);
+    adam.checkweight(apple);
+    eva.eatFruit(apple);
+    eva.getInfor();
+</script>
 </body>
 </html>

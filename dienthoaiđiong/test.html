@@ -6,10 +6,20 @@
 </head>
 <body>
 <script>
-    for(var x = 2017; x < 2020; x++)
-    {
-        console.log(x);
-        break;
+    let a = [1,2,3]
+    let b = [3,2,1]
+    function compareTriplets(a, b) {
+        let array = [];
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] < b[i]) {
+                array[1] =(array[1]) + 1;
+            } else if (a[i] > b[i]) {
+                array[0] =(array[0]) + 1;
+            }
+        }
+        console.log(array)
+            return array
+
     }
 </script>
 </body>
